@@ -6,14 +6,14 @@ let chance;
 let sketch = function(p) {
   let THE_SEED;
   let grid = [];
-  let gx = 16;
-  let gy = 16;
+  let gx = 10;
+  let gy = 10;
 
-  let cdim = 50; // Cell dimension
-  let bwidth = 40; // Band width
+  let cdim = 80; // Cell dimension
+  let bwidth = 60; // Band width
 
   let colorPairs;
-  let number_of_pairs = 2;
+  let number_of_pairs = 3;
   let tomeInstance = tome.getRandom();
   let palette = tomeInstance.colors;
   //let palette = ["#f0eade", "#f7f4ed", "#f8f0e9"];
