@@ -168,6 +168,16 @@
       name: 'rag-virupaksha',
       colors: ['#f5736a', '#925951', '#feba4c', '#9d9b9d'],
       background: '#eedfa2'
+    },
+    {
+      name: 'foxshelter',
+      colors: ['#ff3931', '#007861', '#311f27', '#bab9a4'],
+      background: '#dddddd'
+    },
+    {
+      name: 'hermes',
+      colors: ['#253852', '#51222f', '#b53435', '#ecbb51'],
+      background: '#eeccc2'
     }
   ];
 
@@ -7753,19 +7763,17 @@
   let sketch = function(p) {
     let THE_SEED;
     let grid = [];
-    let gx = 10;
-    let gy = 10;
+    let gx = 16;
+    let gy = 16;
 
-    let cdim = 80; // Cell dimension
-    let bwidth = 60; // Band width
+    let cdim = 50; // Cell dimension
+    let bwidth = 40; // Band width
 
     let colorPairs;
-    let number_of_pairs = 3;
+    let number_of_pairs = 4;
     let tomeInstance = getRandom();
     let palette = tomeInstance.colors;
-    //let palette = ["#f0eade", "#f7f4ed", "#f8f0e9"];
     let background = tomeInstance.background;
-    //let background = "#ffce49";
 
     p.setup = function() {
       p.createCanvas(800, 800);
