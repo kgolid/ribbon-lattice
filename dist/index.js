@@ -3,39 +3,78 @@
   factory();
 }(function () { 'use strict';
 
-  const palettes = [
+  var colourscafe = [
     {
-      name: 'tundra1',
-      colors: ['#40708c', '#8e998c', '#5d3f37', '#ed6954', '#f2e9e2']
+      name: 'cc239',
+      colors: ['#e3dd34', '#78496b', '#f0527f', '#a7e0e2'],
+      background: '#e0eff0'
     },
     {
-      name: 'tundra2',
-      colors: ['#5f9e93', '#3d3638', '#733632', '#b66239', '#b0a1a4', '#e3dad2']
+      name: 'cc234',
+      colors: ['#ffce49', '#ede8dc', '#ff5736', '#ff99b4'],
+      background: '#f7f4ed'
     },
     {
-      name: 'tundra3',
-      colors: [
-        '#87c3ca',
-        '#7b7377',
-        '#b2475d',
-        '#7d3e3e',
-        '#eb7f64',
-        '#d9c67a',
-        '#f3f2f2'
-      ]
+      name: 'cc232',
+      colors: ['#5c5f46', '#ff7044', '#ffce39', '#66aeaa'],
+      background: '#e9ecde'
     },
     {
-      name: 'tundra4',
-      colors: [
-        '#d53939',
-        '#b6754d',
-        '#a88d5f',
-        '#524643',
-        '#3c5a53',
-        '#7d8c7c',
-        '#dad6cd'
-      ]
+      name: 'cc238',
+      colors: ['#553c60', '#ffb0a0', '#ff6749', '#fbe090'],
+      background: '#f5e9de'
     },
+    {
+      name: 'cc242',
+      colors: ['#bbd444', '#fcd744', '#fa7b53', '#423c6f'],
+      background: '#faf4e4'
+    },
+    {
+      name: 'cc245',
+      colors: ['#0d4a4e', '#ff947b', '#ead3a2', '#5284ab'],
+      background: '#f6f4ed'
+    },
+    {
+      name: 'cc273',
+      colors: ['#363d4a', '#7b8a56', '#ff9369', '#f4c172'],
+      background: '#f0efe2'
+    }
+  ];
+
+  var ranganath = [
+    {
+      name: 'rag-mysore',
+      colors: ['#ec6c26', '#613a53', '#e8ac52', '#639aa0'],
+      background: '#d5cda1'
+    },
+    {
+      name: 'rag-gol',
+      colors: ['#d3693e', '#803528', '#f1b156', '#90a798'],
+      background: '#f0e0a4'
+    },
+    {
+      name: 'rag-belur',
+      colors: ['#f46e26', '#68485f', '#3d273a', '#535d55'],
+      background: '#dcd4a6'
+    },
+    {
+      name: 'rag-bangalore',
+      colors: ['#ea720e', '#ca5130', '#e9c25a', '#52534f'],
+      background: '#f9ecd3'
+    },
+    {
+      name: 'rag-taj',
+      colors: ['#ce565e', '#8e1752', '#f8a100', '#3ac1a6'],
+      background: '#efdea2'
+    },
+    {
+      name: 'rag-virupaksha',
+      colors: ['#f5736a', '#925951', '#feba4c', '#9d9b9d'],
+      background: '#eedfa2'
+    }
+  ];
+
+  var roygbivs = [
     {
       name: 'retro',
       colors: [
@@ -108,7 +147,45 @@
         '#ab2562',
         '#ca2847'
       ]
+    }
+  ];
+
+  var tundra = [
+    {
+      name: 'tundra1',
+      colors: ['#40708c', '#8e998c', '#5d3f37', '#ed6954', '#f2e9e2']
     },
+    {
+      name: 'tundra2',
+      colors: ['#5f9e93', '#3d3638', '#733632', '#b66239', '#b0a1a4', '#e3dad2']
+    },
+    {
+      name: 'tundra3',
+      colors: [
+        '#87c3ca',
+        '#7b7377',
+        '#b2475d',
+        '#7d3e3e',
+        '#eb7f64',
+        '#d9c67a',
+        '#f3f2f2'
+      ]
+    },
+    {
+      name: 'tundra4',
+      colors: [
+        '#d53939',
+        '#b6754d',
+        '#a88d5f',
+        '#524643',
+        '#3c5a53',
+        '#7d8c7c',
+        '#dad6cd'
+      ]
+    }
+  ];
+
+  const palettes = [
     {
       name: 'frozen-rose',
       colors: ['#29368f', '#e9697b', '#1b164d', '#f7d996'],
@@ -140,36 +217,6 @@
       background: '#f7f2df'
     },
     {
-      name: 'rag-mysore',
-      colors: ['#ec6c26', '#613a53', '#e8ac52', '#639aa0'],
-      background: '#d5cda1'
-    },
-    {
-      name: 'rag-gol',
-      colors: ['#d3693e', '#803528', '#f1b156', '#90a798'],
-      background: '#f0e0a4'
-    },
-    {
-      name: 'rag-belur',
-      colors: ['#f46e26', '#68485f', '#3d273a', '#535d55'],
-      background: '#dcd4a6'
-    },
-    {
-      name: 'rag-bangalore',
-      colors: ['#ea720e', '#ca5130', '#e9c25a', '#52534f'],
-      background: '#f9ecd3'
-    },
-    {
-      name: 'rag-taj',
-      colors: ['#ce565e', '#8e1752', '#f8a100', '#3ac1a6'],
-      background: '#efdea2'
-    },
-    {
-      name: 'rag-virupaksha',
-      colors: ['#f5736a', '#925951', '#feba4c', '#9d9b9d'],
-      background: '#eedfa2'
-    },
-    {
       name: 'foxshelter',
       colors: ['#ff3931', '#007861', '#311f27', '#bab9a4'],
       background: '#dddddd'
@@ -181,7 +228,9 @@
     }
   ];
 
-  var palettes$1 = palettes.map(p => {
+  const pals = palettes.concat(ranganath, roygbivs, tundra, colourscafe);
+
+  var palettes$1 = pals.map(p => {
     p.size = p.colors.length;
     return p;
   });
