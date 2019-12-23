@@ -1,5 +1,5 @@
-import * as tome from "chromotome";
-import Chance from "chance";
+import * as tome from 'chromotome';
+import Chance from 'chance';
 
 let chance;
 
@@ -60,7 +60,7 @@ let sketch = function(p) {
   }
 
   p.draw = function() {
-    p.background(background ? background : "#fefefe");
+    p.background(background ? background : '#fefefe');
     for (let i = 0; i < gy; i++) {
       for (let j = 0; j < gx; j++) {
         p.push();
@@ -72,7 +72,7 @@ let sketch = function(p) {
   };
 
   p.keyPressed = function() {
-    if (p.keyCode === 80) p.saveCanvas("sketch_" + THE_SEED, "jpeg");
+    if (p.keyCode === 80) p.saveCanvas('sketch_' + THE_SEED, 'jpeg');
   };
 
   function nextCell(n, w) {
