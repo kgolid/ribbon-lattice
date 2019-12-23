@@ -1,7 +1,148 @@
 (function (factory) {
   typeof define === 'function' && define.amd ? define(factory) :
   factory();
-}(function () { 'use strict';
+}((function () { 'use strict';
+
+  var misc = [
+    {
+      name: 'frozen-rose',
+      colors: ['#29368f', '#e9697b', '#1b164d', '#f7d996'],
+      background: '#f2e8e4'
+    },
+    {
+      name: 'winter-night',
+      colors: ['#122438', '#dd672e', '#87c7ca', '#ebebeb'],
+      background: '#ebebeb'
+    },
+    {
+      name: 'saami',
+      colors: ['#eab700', '#e64818', '#2c6393', '#eecfca'],
+      background: '#e7e6e4'
+    },
+    {
+      name: 'knotberry1',
+      colors: ['#20342a', '#f74713', '#686d2c', '#e9b4a6'],
+      background: '#e5ded8'
+    },
+    {
+      name: 'knotberry2',
+      colors: ['#1d3b1a', '#eb4b11', '#e5bc00', '#f29881'],
+      background: '#eae2d0'
+    },
+    {
+      name: 'tricolor',
+      colors: ['#ec643b', '#56b7ab', '#f8cb57', '#1f1e43'],
+      background: '#f7f2df'
+    },
+    {
+      name: 'foxshelter',
+      colors: ['#ff3931', '#007861', '#311f27', '#bab9a4'],
+      background: '#dddddd'
+    },
+    {
+      name: 'hermes',
+      colors: ['#253852', '#51222f', '#b53435', '#ecbb51'],
+      background: '#eeccc2'
+    },
+    {
+      name: 'olympia',
+      colors: ['#ff3250', '#ffb33a', '#008c36', '#0085c6', '#4c4c4c'],
+      stroke: '#0b0b0b',
+      background: '#faf2e5'
+    },
+    {
+      name: 'byrnes',
+      colors: ['#c54514', '#dca215', '#23507f'],
+      stroke: '#0b0b0b',
+      background: '#e8e7d4'
+    },
+    {
+      name: 'butterfly',
+      colors: ['#f40104', '#f6c0b3', '#99673a', '#f0f1f4'],
+      stroke: '#191e36',
+      background: '#191e36'
+    },
+    {
+      name: 'floratopia',
+      colors: ['#bf4a2b', '#cd902a', '#4e4973', '#f5d4bc'],
+      stroke: '#1e1a43',
+      background: '#1e1a43'
+    },
+    {
+      name: 'verena',
+      colors: ['#f1594a', '#f5b50e', '#14a160', '#2969de', '#885fa4'],
+      stroke: '#1a1a1a',
+      background: '#e2e6e8'
+    },
+    {
+      name: 'empusa',
+      colors: [
+        '#c92a28',
+        '#e69301',
+        '#1f8793',
+        '#13652b',
+        '#e7d8b0',
+        '#48233b',
+        '#e3b3ac'
+      ],
+      stroke: '#1a1a1a',
+      background: '#f0f0f2'
+    },
+    {
+      name: 'florida_citrus',
+      colors: ['#ea7251', '#ebf7f0', '#02aca5'],
+      stroke: '#050100',
+      background: '#9ae2d3'
+    },
+    {
+      name: 'lemon_citrus',
+      colors: ['#e2d574', '#f1f4f7', '#69c5ab'],
+      stroke: '#463231',
+      background: '#f79eac'
+    },
+    {
+      name: 'yuma_punk',
+      colors: ['#f05e3b', '#ebdec4', '#ffdb00'],
+      stroke: '#ebdec4',
+      background: '#161616'
+    },
+    {
+      name: 'moir',
+      colors: ['#a49f4f', '#d4501e', '#f7c558', '#ebbaa6'],
+      stroke: '#161716',
+      background: '#f7f4ef'
+    },
+    {
+      name: 'sprague',
+      colors: ['#ec2f28', '#f8cd28', '#1e95bb', '#fbaab3', '#fcefdf'],
+      stroke: '#221e1f',
+      background: '#fcefdf'
+    },
+    {
+      name: 'bloomberg',
+      colors: ['#ff5500', '#f4c145', '#144714', '#2f04fc', '#e276af'],
+      stroke: '#000',
+      background: '#fff3dd'
+    },
+    {
+      name: 'revolucion',
+      colors: ['#ed555d', '#fffcc9', '#41b797', '#eda126', '#7b5770'],
+      stroke: '#fffcc9',
+      background: '#2d1922'
+    },
+    {
+      name: 'sneaker',
+      colors: ['#e8165b', '#401e38', '#66c3b4', '#ee7724', '#584098'],
+      stroke: '#401e38',
+      background: '#ffffff'
+    },
+    {
+      name: 'miradors',
+      colors: ['#ff6936', '#fddc3f', '#0075ca', '#00bb70'],
+      stroke: '#ffffff',
+      background: '#020202'
+    }
+  ];
 
   var colourscafe = [
     {
@@ -185,58 +326,467 @@
     }
   ];
 
-  const palettes = [
+  var rohlfs = [
     {
-      name: 'frozen-rose',
-      colors: ['#29368f', '#e9697b', '#1b164d', '#f7d996'],
-      background: '#f2e8e4'
+      name: 'rohlfs_1R',
+      colors: ['#004996', '#567bae', '#ff4c48', '#ffbcb3'],
+      stroke: '#004996',
+      background: '#fff8e7'
     },
     {
-      name: 'winter-night',
-      colors: ['#122438', '#dd672e', '#87c7ca', '#ebebeb'],
-      background: '#ebebeb'
+      name: 'rohlfs_1Y',
+      colors: ['#004996', '#567bae', '#ffc000', '#ffdca4'],
+      stroke: '#004996',
+      background: '#fff8e7'
     },
     {
-      name: 'saami',
-      colors: ['#eab700', '#e64818', '#2c6393', '#eecfca'],
-      background: '#e7e6e4'
+      name: 'rohlfs_1G',
+      colors: ['#004996', '#567bae', '#60bf3c', '#d2deb1'],
+      stroke: '#004996',
+      background: '#fff8e7'
     },
     {
-      name: 'knotberry1',
-      colors: ['#20342a', '#f74713', '#686d2c', '#e9b4a6'],
-      background: '#e5ded8'
+      name: 'rohlfs_2',
+      colors: ['#4d3d9a', '#f76975', '#ffffff', '#eff0dd'],
+      stroke: '#211029',
+      background: '#58bdbc'
     },
     {
-      name: 'knotberry2',
-      colors: ['#1d3b1a', '#eb4b11', '#e5bc00', '#f29881'],
-      background: '#eae2d0'
+      name: 'rohlfs_3',
+      colors: ['#abdfdf', '#fde500', '#58bdbc', '#eff0dd'],
+      stroke: '#211029',
+      background: '#f76975'
     },
     {
-      name: 'tricolor',
-      colors: ['#ec643b', '#56b7ab', '#f8cb57', '#1f1e43'],
-      background: '#f7f2df'
-    },
-    {
-      name: 'foxshelter',
-      colors: ['#ff3931', '#007861', '#311f27', '#bab9a4'],
-      background: '#dddddd'
-    },
-    {
-      name: 'hermes',
-      colors: ['#253852', '#51222f', '#b53435', '#ecbb51'],
-      background: '#eeccc2'
+      name: 'rohlfs_4',
+      colors: ['#fde500', '#2f2043', '#f76975', '#eff0dd'],
+      stroke: '#211029',
+      background: '#fbbeca'
     }
   ];
 
-  const pals = palettes.concat(ranganath, roygbivs, tundra, colourscafe);
+  var ducci = [
+    {
+      name: 'ducci_jb',
+      colors: ['#395e54', '#e77b4d', '#050006', '#e55486'],
+      stroke: '#050006',
+      background: '#efe0bc'
+    },
+    {
+      name: 'ducci_a',
+      colors: ['#809498', '#d3990e', '#000000', '#ecddc5'],
+      stroke: '#ecddc5',
+      background: '#863f52'
+    },
+    {
+      name: 'ducci_b',
+      colors: ['#ecddc5', '#79b27b', '#000000', '#ac6548'],
+      stroke: '#ac6548',
+      background: '#d5c08e'
+    },
+    {
+      name: 'ducci_d',
+      colors: ['#f3cb4d', '#f2f5e3', '#20191b', '#67875c'],
+      stroke: '#67875c',
+      background: '#433d5f'
+    },
+    {
+      name: 'ducci_e',
+      colors: ['#c37c2b', '#f6ecce', '#000000', '#386a7a'],
+      stroke: '#386a7a',
+      background: '#e3cd98'
+    },
+    {
+      name: 'ducci_f',
+      colors: ['#596f7e', '#eae6c7', '#463c21', '#f4cb4c'],
+      stroke: '#f4cb4c',
+      background: '#e67300'
+    },
+    {
+      name: 'ducci_g',
+      colors: ['#c75669', '#000000', '#11706a'],
+      stroke: '#11706a',
+      background: '#ecddc5'
+    },
+    {
+      name: 'ducci_h',
+      colors: ['#6b5c6e', '#4a2839', '#d9574a'],
+      stroke: '#d9574a',
+      background: '#ffc34b'
+    },
+    {
+      name: 'ducci_i',
+      colors: ['#e9dcad', '#143331', '#ffc000'],
+      stroke: '#ffc000',
+      background: '#a74c02'
+    },
+    {
+      name: 'ducci_j',
+      colors: ['#c47c2b', '#5f5726', '#000000', '#7e8a84'],
+      stroke: '#7e8a84',
+      background: '#ecddc5'
+    },
+    {
+      name: 'ducci_o',
+      colors: ['#c15e1f', '#e4a13a', '#000000', '#4d545a'],
+      stroke: '#4d545a',
+      background: '#dfc79b'
+    },
+    {
+      name: 'ducci_q',
+      colors: ['#4bae8c', '#d0c1a0', '#2d3538'],
+      stroke: '#2d3538',
+      background: '#d06440'
+    },
+    {
+      name: 'ducci_u',
+      colors: ['#f6d700', '#f2d692', '#000000', '#5d3552'],
+      stroke: '#5d3552',
+      background: '#ff7426'
+    },
+    {
+      name: 'ducci_v',
+      colors: ['#c65f75', '#d3990e', '#000000', '#597e7a'],
+      stroke: '#597e7a',
+      background: '#f6eccb'
+    },
+    {
+      name: 'ducci_x',
+      colors: ['#dd614a', '#f5cedb', '#1a1e4f'],
+      stroke: '#1a1e4f',
+      background: '#fbb900'
+    }
+  ];
 
-  var palettes$1 = pals.map(p => {
+  var judson = [
+    {
+      name: 'jud_playground',
+      colors: ['#f04924', '#fcce09', '#408ac9'],
+      stroke: '#2e2925',
+      background: '#ffffff'
+    },
+    {
+      name: 'jud_horizon',
+      colors: ['#f8c3df', '#f2e420', '#28b3d0', '#648731', '#ef6a7d'],
+      stroke: '#030305',
+      background: '#f2f0e1'
+    },
+    {
+      name: 'jud_mural',
+      colors: ['#ca3122', '#e5af16', '#4a93a2', '#0e7e39', '#e2b9bd'],
+      stroke: '#1c1616',
+      background: '#e3ded8'
+    },
+    {
+      name: 'jud_cabinet',
+      colors: ['#f0afb7', '#f6bc12', '#1477bb', '#41bb9b'],
+      stroke: '#020508',
+      background: '#e3ded8'
+    }
+  ];
+
+  var iivonen = [
+    {
+      name: 'iiso_zeitung',
+      colors: ['#ee8067', '#f3df76', '#00a9c0', '#f7ab76'],
+      stroke: '#111a17',
+      background: '#f5efcb'
+    },
+    {
+      name: 'iiso_curcuit',
+      colors: ['#f0865c', '#f2b07b', '#6bc4d2', '#1a3643'],
+      stroke: '#0f1417',
+      background: '#f0f0e8'
+    },
+    {
+      name: 'iiso_airlines',
+      colors: ['#fe765a', '#ffb468', '#4b588f', '#faf1e0'],
+      stroke: '#1c1616',
+      background: '#fae5c8'
+    },
+    {
+      name: 'iiso_daily',
+      colors: ['#e76c4a', '#f0d967', '#7f8cb6', '#1daeb1', '#ef9640'],
+      stroke: '#000100',
+      background: '#e2ded2'
+    }
+  ];
+
+  var kovecses = [
+    {
+      name: 'kov_01',
+      colors: ['#d24c23', '#7ba6bc', '#f0c667', '#ede2b3', '#672b35', '#142a36'],
+      stroke: '#132a37',
+      background: '#108266'
+    },
+    {
+      name: 'kov_02',
+      colors: ['#e8dccc', '#e94641', '#eeaeae'],
+      stroke: '#e8dccc',
+      background: '#6c96be'
+    },
+    {
+      name: 'kov_03',
+      colors: ['#e3937b', '#d93f1d', '#090d15', '#e6cca7'],
+      stroke: '#090d15',
+      background: '#558947'
+    },
+    {
+      name: 'kov_04',
+      colors: ['#d03718', '#292b36', '#33762f', '#ead7c9', '#ce7028', '#689d8d'],
+      stroke: '#292b36',
+      background: '#deb330'
+    },
+    {
+      name: 'kov_05',
+      colors: ['#de3f1a', '#de9232', '#007158', '#e6cdaf', '#869679'],
+      stroke: '#010006',
+      background: '#7aa5a6'
+    },
+    {
+      name: 'kov_06',
+      colors: [
+        '#a87c2a',
+        '#bdc9b1',
+        '#f14616',
+        '#ecbfaf',
+        '#017724',
+        '#0e2733',
+        '#2b9ae9'
+      ],
+      stroke: '#292319',
+      background: '#dfd4c1'
+    },
+    {
+      name: 'kov_06b',
+      colors: [
+        '#d57846',
+        '#dfe0cc',
+        '#de442f',
+        '#e7d3c5',
+        '#5ec227',
+        '#302f35',
+        '#63bdb3'
+      ],
+      stroke: '#292319',
+      background: '#dfd4c1'
+    },
+    {
+      name: 'kov_07',
+      colors: ['#c91619', '#fdecd2', '#f4a000', '#4c2653'],
+      stroke: '#111',
+      background: '#89c2cd'
+    }
+  ];
+
+  var tsuchimochi = [
+    {
+      name: 'tsu_arcade',
+      colors: ['#4aad8b', '#e15147', '#f3b551', '#cec8b8', '#d1af84', '#544e47'],
+      stroke: '#251c12',
+      background: '#cfc7b9'
+    },
+    {
+      name: 'tsu_harutan',
+      colors: ['#75974a', '#c83e3c', '#f39140', '#e4ded2', '#f8c5a4', '#434f55'],
+      stroke: '#251c12',
+      background: '#cfc7b9'
+    },
+    {
+      name: 'tsu_akasaka',
+      colors: ['#687f72', '#cc7d6c', '#dec36f', '#dec7af', '#ad8470', '#424637'],
+      stroke: '#251c12',
+      background: '#cfc7b9'
+    }
+  ];
+
+  var duotone = [
+    {
+      name: 'dt01',
+      colors: ['#172a89', '#f7f7f3'],
+      stroke: '#172a89',
+      background: '#f3abb0'
+    },
+    {
+      name: 'dt02',
+      colors: ['#302956', '#f3c507'],
+      stroke: '#302956',
+      background: '#eee3d3'
+    },
+    {
+      name: 'dt03',
+      colors: ['#000000', '#a7a7a7'],
+      stroke: '#000000',
+      background: '#0a5e78'
+    },
+    {
+      name: 'dt04',
+      colors: ['#50978e', '#f7f0df'],
+      stroke: '#000000',
+      background: '#f7f0df'
+    },
+    {
+      name: 'dt05',
+      colors: ['#ee5d65', '#f0e5cb'],
+      stroke: '#080708',
+      background: '#f0e5cb'
+    },
+    {
+      name: 'dt06',
+      colors: ['#271f47', '#e7ceb5'],
+      stroke: '#271f47',
+      background: '#cc2b1c'
+    },
+    {
+      name: 'dt07',
+      colors: ['#6a98a5', '#d24c18'],
+      stroke: '#efebda',
+      background: '#efebda'
+    },
+    {
+      name: 'dt08',
+      colors: ['#5d9d88', '#ebb43b'],
+      stroke: '#efebda',
+      background: '#efebda'
+    },
+    {
+      name: 'dt09',
+      colors: ['#052e57', '#de8d80'],
+      stroke: '#efebda',
+      background: '#efebda'
+    }
+  ];
+
+  var hilda = [
+    {
+      name: 'hilda01',
+      colors: ['#ec5526', '#f4ac12', '#9ebbc1', '#f7f4e2'],
+      stroke: '#1e1b1e',
+      background: '#e7e8d4'
+    },
+    {
+      name: 'hilda02',
+      colors: ['#eb5627', '#eebb20', '#4e9eb8', '#f7f5d0'],
+      stroke: '#201d13',
+      background: '#77c1c0'
+    },
+    {
+      name: 'hilda03',
+      colors: ['#e95145', '#f8b917', '#b8bdc1', '#ffb2a2'],
+      stroke: '#010101',
+      background: '#6b7752'
+    },
+    {
+      name: 'hilda04',
+      colors: ['#e95145', '#f6bf7a', '#589da1', '#f5d9bc'],
+      stroke: '#000001',
+      background: '#f5ede1'
+    },
+    {
+      name: 'hilda05',
+      colors: ['#ff6555', '#ffb58f', '#d8eecf', '#8c4b47', '#bf7f93'],
+      stroke: '#2b0404',
+      background: '#ffda82'
+    },
+    {
+      name: 'hilda06',
+      colors: ['#f75952', '#ffce84', '#74b7b2', '#f6f6f6', '#b17d71'],
+      stroke: '#0e0603',
+      background: '#f6ecd4'
+    }
+  ];
+
+  var spatial = [
+    {
+      name: 'spatial01',
+      colors: ['#ff5937', '#f6f6f4', '#4169ff'],
+      stroke: '#ff5937',
+      background: '#f6f6f4'
+    },
+    {
+      name: 'spatial02',
+      colors: ['#ff5937', '#f6f6f4', '#f6f6f4'],
+      stroke: '#ff5937',
+      background: '#f6f6f4'
+    },
+    {
+      name: 'spatial02i',
+      colors: ['#f6f6f4', '#ff5937', '#ff5937'],
+      stroke: '#f6f6f4',
+      background: '#ff5937'
+    },
+
+    {
+      name: 'spatial03',
+      colors: ['#4169ff', '#f6f6f4', '#f6f6f4'],
+      stroke: '#4169ff',
+      background: '#f6f6f4'
+    },
+    {
+      name: 'spatial03i',
+      colors: ['#f6f6f4', '#4169ff', '#4169ff'],
+      stroke: '#f6f6f4',
+      background: '#4169ff'
+    }
+  ];
+
+  var jung = [
+    {
+      name: 'jung_bird',
+      colors: ['#fc3032', '#fed530', '#33c3fb', '#ff7bac', '#fda929'],
+      stroke: '#000000',
+      background: '#ffffff'
+    },
+    {
+      name: 'jung_horse',
+      colors: ['#e72e81', '#f0bf36', '#3056a2'],
+      stroke: '#000000',
+      background: '#ffffff'
+    },
+    {
+      name: 'jung_croc',
+      colors: ['#f13274', '#eed03e', '#405e7f', '#19a198'],
+      stroke: '#000000',
+      background: '#ffffff'
+    },
+    {
+      name: 'jung_hippo',
+      colors: ['#ff7bac', '#ff921e', '#3ea8f5', '#7ac943'],
+      stroke: '#000000',
+      background: '#ffffff'
+    },
+    {
+      name: 'jung_wolf',
+      colors: ['#e51c39', '#f1b844', '#36c4b7', '#666666'],
+      stroke: '#000000',
+      background: '#ffffff'
+    }
+  ];
+
+  const pals = misc.concat(
+    ranganath,
+    roygbivs,
+    tundra,
+    colourscafe,
+    rohlfs,
+    ducci,
+    judson,
+    iivonen,
+    kovecses,
+    tsuchimochi,
+    duotone,
+    hilda,
+    spatial,
+    jung
+  );
+
+  var palettes = pals.map(p => {
     p.size = p.colors.length;
     return p;
   });
 
   function getRandom() {
-    return palettes$1[Math.floor(Math.random() * palettes$1.length)];
+    return palettes[Math.floor(Math.random() * palettes.length)];
   }
 
   function createCommonjsModule(fn, module) {
@@ -244,7 +794,7 @@
   }
 
   var chance_1 = createCommonjsModule(function (module, exports) {
-  //  Chance.js 1.0.18
+  //  Chance.js 1.1.3
   //  http://chancejs.com
   //  (c) 2013 Victor Quinn
   //  Chance may be freely distributed or modified under the MIT license.
@@ -318,7 +868,7 @@
           return this;
       }
 
-      Chance.prototype.VERSION = "1.0.18";
+      Chance.prototype.VERSION = "1.1.3";
 
       // Random helper functions
       function initOptions(options, defaults) {
@@ -392,6 +942,16 @@
           return this.random() * 100 < options.likelihood;
       };
 
+      Chance.prototype.falsy = function (options) {
+          // return a random falsy value
+          options = initOptions(options, {pool: [false, null, 0, NaN, '']});
+          var pool = options.pool,
+              index = this.integer({min: 0, max: pool.length}),
+              value = pool[index];
+
+          return value;
+      };
+
       Chance.prototype.animal = function (options){
         //returns a random animal
         options = initOptions(options);
@@ -406,7 +966,7 @@
             return this.pick(this.get("animals")[options.type.toLowerCase()]);
         }
          //if user does not put in any animal type, will return a random animal regardless
-        animalTypeArray = ["desert","forest","ocean","zoo","farm","pet","grassland"];
+        var animalTypeArray = ["desert","forest","ocean","zoo","farm","pet","grassland"];
         return this.pick(this.get("animals")[this.pick(animalTypeArray)]);
       };
 
@@ -538,6 +1098,24 @@
             options.max = Math.pow(10, options.numerals) - 1;
           }
           testRange(options.min < 0, "Chance: Min cannot be less than zero.");
+
+          if (options.exclude) {
+              testRange(!Array.isArray(options.exclude), "Chance: exclude must be an array.");
+
+              for (var exclusionIndex in options.exclude) {
+                  testRange(!Number.isInteger(options.exclude[exclusionIndex]), "Chance: exclude must be numbers.");
+              }
+
+              let random = options.min + this.natural({max: options.max - options.min - options.exclude.length});
+              var sortedExclusions = options.exclude.sort();
+              for (var exclusionIndex in sortedExclusions) {
+                  if (random < sortedExclusions[exclusionIndex]) {
+                      break
+                  }
+                  random++;
+              }
+              return random
+          }
           return this.integer(options);
       };
 
@@ -625,18 +1203,130 @@
       /**
        *  Return a random string
        *
-       *  @param {Object} [options={}] can specify a length
+       *  @param {Object} [options={}] can specify a length or min and max
        *  @returns {String} a string of random length
        *  @throws {RangeError} length cannot be less than zero
        */
       Chance.prototype.string = function (options) {
-          options = initOptions(options, { length: this.natural({min: 5, max: 20}) });
+          options = initOptions(options, { min: 5, max: 20 });
+
+          if (!options.length) {
+              options.length = this.natural({ min: options.min, max: options.max });
+          }
+
           testRange(options.length < 0, "Chance: Length cannot be less than zero.");
           var length = options.length,
               text = this.n(this.character, length, options);
 
           return text.join("");
       };
+
+      function CopyToken(c) {
+          this.c = c;
+      }
+
+      CopyToken.prototype = {
+          substitute: function () {
+              return this.c
+          }
+      };
+
+      function EscapeToken(c) {
+          this.c = c;
+      }
+
+      EscapeToken.prototype = {
+          substitute: function () {
+              if (!/[{}\\]/.test(this.c)) {
+                  throw new Error('Invalid escape sequence: "\\' + this.c + '".')
+              }
+              return this.c
+          }
+      };
+
+      function ReplaceToken(c) {
+          this.c = c;
+      }
+
+      ReplaceToken.prototype = {
+          replacers: {
+              '#': function (chance) { return chance.character({ pool: NUMBERS }) },
+              'A': function (chance) { return chance.character({ pool: CHARS_UPPER }) },
+              'a': function (chance) { return chance.character({ pool: CHARS_LOWER }) },
+          },
+
+          substitute: function (chance) {
+              var replacer = this.replacers[this.c];
+              if (!replacer) {
+                  throw new Error('Invalid replacement character: "' + this.c + '".')
+              }
+              return replacer(chance)
+          }
+      };
+
+      function parseTemplate(template) {
+          var tokens = [];
+          var mode = 'identity';
+          for (var i = 0; i<template.length; i++) {
+              var c = template[i];
+              switch (mode) {
+                  case 'escape':
+                      tokens.push(new EscapeToken(c));
+                      mode = 'identity';
+                      break
+                  case 'identity':
+                      if (c === '{') {
+                          mode = 'replace';
+                      } else if (c === '\\') {
+                          mode = 'escape';
+                      } else {
+                          tokens.push(new CopyToken(c));
+                      }
+                      break
+                  case 'replace':
+                      if (c === '}') {
+                          mode = 'identity';
+                      } else {
+                          tokens.push(new ReplaceToken(c));
+                      }
+                      break
+              }
+          }
+          return tokens
+      }
+
+      /**
+       *  Return a random string matching the given template.
+       *
+       *  The template consists of any number of "character replacement" and
+       *  "character literal" sequences. A "character replacement" sequence
+       *  starts with a left brace, has any number of special replacement
+       *  characters, and ends with a right brace. A character literal can be any
+       *  character except a brace or a backslash. A literal brace or backslash
+       *  character can be included in the output by escaping with a backslash.
+       *
+       *  The following replacement characters can be used in a replacement
+       *  sequence:
+       *
+       *      "#": a random digit
+       *      "a": a random lower case letter
+       *      "A": a random upper case letter
+       *
+       *  Example: chance.template('{AA###}-{##}')
+       *
+       *  @param {String} template string.
+       *  @returns {String} a random string matching the template.
+       */
+      Chance.prototype.template = function (template) {
+          if (!template) {
+              throw new Error('Template string is required')
+          }
+          var self = this;
+          return parseTemplate(template)
+              .map(function (token) { return token.substitute(self) })
+              .join('');
+      };
+
 
       /**
        *  Return a random buffer
@@ -908,7 +1598,7 @@
           text = this.capitalize(text);
 
           // Make sure punctuation has a usable value
-          if (punctuation !== false && !/^[\.\?;!:]$/.test(punctuation)) {
+          if (punctuation !== false && !/^[.?;!:]$/.test(punctuation)) {
               punctuation = '.';
           }
 
@@ -1110,7 +1800,7 @@
         if (options.nationality === "*") {
           var allLastNames = [];
           var lastNames = this.get("lastNames");
-          Object.keys(lastNames).forEach(function(key, i){
+          Object.keys(lastNames).forEach(function(key){
             allLastNames = allLastNames.concat(lastNames[key]);
           });
           return this.pick(allLastNames)
@@ -2010,6 +2700,7 @@
                   }
                   break;
               case 'it':
+              case 'mx':
                   states = this.get("country_regions")[options.country.toLowerCase()];
                   break;
               case 'uk':
@@ -2472,7 +3163,7 @@
               };
 
           cf = cf.concat(name_generator(last, true), name_generator(first), date_generator(birthday, gender, this), city.toUpperCase().split("")).join("");
-          cf += checkdigit_generator(cf.toUpperCase(), this);
+          cf += checkdigit_generator(cf.toUpperCase());
 
           return cf.toUpperCase();
       };
@@ -2586,7 +3277,7 @@
       // -- Miscellaneous --
 
       // Coin - Flip, flip, flipadelphia
-      Chance.prototype.coin = function(options) {
+      Chance.prototype.coin = function() {
         return this.bool() ? "heads" : "tails";
       };
 
@@ -4113,6 +4804,40 @@
                   { name: "Calabria", abbreviation: "CAL" },
                   { name: "Sicilia", abbreviation: "SIC" },
                   { name: "Sardegna", abbreviation: "SAR" }
+              ],
+              mx: [
+                  { name: 'Aguascalientes', abbreviation: 'AGU' },
+                  { name: 'Baja California', abbreviation: 'BCN' },
+                  { name: 'Baja California Sur', abbreviation: 'BCS' },
+                  { name: 'Campeche', abbreviation: 'CAM' },
+                  { name: 'Chiapas', abbreviation: 'CHP' },
+                  { name: 'Chihuahua', abbreviation: 'CHH' },
+                  { name: 'Ciudad de México', abbreviation: 'DIF' },
+                  { name: 'Coahuila', abbreviation: 'COA' },
+                  { name: 'Colima', abbreviation: 'COL' },
+                  { name: 'Durango', abbreviation: 'DUR' },
+                  { name: 'Guanajuato', abbreviation: 'GUA' },
+                  { name: 'Guerrero', abbreviation: 'GRO' },
+                  { name: 'Hidalgo', abbreviation: 'HID' },
+                  { name: 'Jalisco', abbreviation: 'JAL' },
+                  { name: 'México', abbreviation: 'MEX' },
+                  { name: 'Michoacán', abbreviation: 'MIC' },
+                  { name: 'Morelos', abbreviation: 'MOR' },
+                  { name: 'Nayarit', abbreviation: 'NAY' },
+                  { name: 'Nuevo León', abbreviation: 'NLE' },
+                  { name: 'Oaxaca', abbreviation: 'OAX' },
+                  { name: 'Puebla', abbreviation: 'PUE' },
+                  { name: 'Querétaro', abbreviation: 'QUE' },
+                  { name: 'Quintana Roo', abbreviation: 'ROO' },
+                  { name: 'San Luis Potosí', abbreviation: 'SLP' },
+                  { name: 'Sinaloa', abbreviation: 'SIN' },
+                  { name: 'Sonora', abbreviation: 'SON' },
+                  { name: 'Tabasco', abbreviation: 'TAB' },
+                  { name: 'Tamaulipas', abbreviation: 'TAM' },
+                  { name: 'Tlaxcala', abbreviation: 'TLA' },
+                  { name: 'Veracruz', abbreviation: 'VER' },
+                  { name: 'Yucatán', abbreviation: 'YUC' },
+                  { name: 'Zacatecas', abbreviation: 'ZAC' }
               ]
           },
 
@@ -6827,7 +7552,7 @@
               "Civil Engineer",
               "Claims Manager",
               "Clinical Research Assistant",
-              "Collections Manager.",
+              "Collections Manager",
               "Compliance Manager",
               "Comptroller",
               "Computer Manager",
@@ -7173,7 +7898,15 @@
           primes: [
               // 1230 first primes, i.e. all primes up to the first one greater than 10000, inclusive.
               2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509,521,523,541,547,557,563,569,571,577,587,593,599,601,607,613,617,619,631,641,643,647,653,659,661,673,677,683,691,701,709,719,727,733,739,743,751,757,761,769,773,787,797,809,811,821,823,827,829,839,853,857,859,863,877,881,883,887,907,911,919,929,937,941,947,953,967,971,977,983,991,997,1009,1013,1019,1021,1031,1033,1039,1049,1051,1061,1063,1069,1087,1091,1093,1097,1103,1109,1117,1123,1129,1151,1153,1163,1171,1181,1187,1193,1201,1213,1217,1223,1229,1231,1237,1249,1259,1277,1279,1283,1289,1291,1297,1301,1303,1307,1319,1321,1327,1361,1367,1373,1381,1399,1409,1423,1427,1429,1433,1439,1447,1451,1453,1459,1471,1481,1483,1487,1489,1493,1499,1511,1523,1531,1543,1549,1553,1559,1567,1571,1579,1583,1597,1601,1607,1609,1613,1619,1621,1627,1637,1657,1663,1667,1669,1693,1697,1699,1709,1721,1723,1733,1741,1747,1753,1759,1777,1783,1787,1789,1801,1811,1823,1831,1847,1861,1867,1871,1873,1877,1879,1889,1901,1907,1913,1931,1933,1949,1951,1973,1979,1987,1993,1997,1999,2003,2011,2017,2027,2029,2039,2053,2063,2069,2081,2083,2087,2089,2099,2111,2113,2129,2131,2137,2141,2143,2153,2161,2179,2203,2207,2213,2221,2237,2239,2243,2251,2267,2269,2273,2281,2287,2293,2297,2309,2311,2333,2339,2341,2347,2351,2357,2371,2377,2381,2383,2389,2393,2399,2411,2417,2423,2437,2441,2447,2459,2467,2473,2477,2503,2521,2531,2539,2543,2549,2551,2557,2579,2591,2593,2609,2617,2621,2633,2647,2657,2659,2663,2671,2677,2683,2687,2689,2693,2699,2707,2711,2713,2719,2729,2731,2741,2749,2753,2767,2777,2789,2791,2797,2801,2803,2819,2833,2837,2843,2851,2857,2861,2879,2887,2897,2903,2909,2917,2927,2939,2953,2957,2963,2969,2971,2999,3001,3011,3019,3023,3037,3041,3049,3061,3067,3079,3083,3089,3109,3119,3121,3137,3163,3167,3169,3181,3187,3191,3203,3209,3217,3221,3229,3251,3253,3257,3259,3271,3299,3301,3307,3313,3319,3323,3329,3331,3343,3347,3359,3361,3371,3373,3389,3391,3407,3413,3433,3449,3457,3461,3463,3467,3469,3491,3499,3511,3517,3527,3529,3533,3539,3541,3547,3557,3559,3571,3581,3583,3593,3607,3613,3617,3623,3631,3637,3643,3659,3671,3673,3677,3691,3697,3701,3709,3719,3727,3733,3739,3761,3767,3769,3779,3793,3797,3803,3821,3823,3833,3847,3851,3853,3863,3877,3881,3889,3907,3911,3917,3919,3923,3929,3931,3943,3947,3967,3989,4001,4003,4007,4013,4019,4021,4027,4049,4051,4057,4073,4079,4091,4093,4099,4111,4127,4129,4133,4139,4153,4157,4159,4177,4201,4211,4217,4219,4229,4231,4241,4243,4253,4259,4261,4271,4273,4283,4289,4297,4327,4337,4339,4349,4357,4363,4373,4391,4397,4409,4421,4423,4441,4447,4451,4457,4463,4481,4483,4493,4507,4513,4517,4519,4523,4547,4549,4561,4567,4583,4591,4597,4603,4621,4637,4639,4643,4649,4651,4657,4663,4673,4679,4691,4703,4721,4723,4729,4733,4751,4759,4783,4787,4789,4793,4799,4801,4813,4817,4831,4861,4871,4877,4889,4903,4909,4919,4931,4933,4937,4943,4951,4957,4967,4969,4973,4987,4993,4999,5003,5009,5011,5021,5023,5039,5051,5059,5077,5081,5087,5099,5101,5107,5113,5119,5147,5153,5167,5171,5179,5189,5197,5209,5227,5231,5233,5237,5261,5273,5279,5281,5297,5303,5309,5323,5333,5347,5351,5381,5387,5393,5399,5407,5413,5417,5419,5431,5437,5441,5443,5449,5471,5477,5479,5483,5501,5503,5507,5519,5521,5527,5531,5557,5563,5569,5573,5581,5591,5623,5639,5641,5647,5651,5653,5657,5659,5669,5683,5689,5693,5701,5711,5717,5737,5741,5743,5749,5779,5783,5791,5801,5807,5813,5821,5827,5839,5843,5849,5851,5857,5861,5867,5869,5879,5881,5897,5903,5923,5927,5939,5953,5981,5987,6007,6011,6029,6037,6043,6047,6053,6067,6073,6079,6089,6091,6101,6113,6121,6131,6133,6143,6151,6163,6173,6197,6199,6203,6211,6217,6221,6229,6247,6257,6263,6269,6271,6277,6287,6299,6301,6311,6317,6323,6329,6337,6343,6353,6359,6361,6367,6373,6379,6389,6397,6421,6427,6449,6451,6469,6473,6481,6491,6521,6529,6547,6551,6553,6563,6569,6571,6577,6581,6599,6607,6619,6637,6653,6659,6661,6673,6679,6689,6691,6701,6703,6709,6719,6733,6737,6761,6763,6779,6781,6791,6793,6803,6823,6827,6829,6833,6841,6857,6863,6869,6871,6883,6899,6907,6911,6917,6947,6949,6959,6961,6967,6971,6977,6983,6991,6997,7001,7013,7019,7027,7039,7043,7057,7069,7079,7103,7109,7121,7127,7129,7151,7159,7177,7187,7193,7207,7211,7213,7219,7229,7237,7243,7247,7253,7283,7297,7307,7309,7321,7331,7333,7349,7351,7369,7393,7411,7417,7433,7451,7457,7459,7477,7481,7487,7489,7499,7507,7517,7523,7529,7537,7541,7547,7549,7559,7561,7573,7577,7583,7589,7591,7603,7607,7621,7639,7643,7649,7669,7673,7681,7687,7691,7699,7703,7717,7723,7727,7741,7753,7757,7759,7789,7793,7817,7823,7829,7841,7853,7867,7873,7877,7879,7883,7901,7907,7919,7927,7933,7937,7949,7951,7963,7993,8009,8011,8017,8039,8053,8059,8069,8081,8087,8089,8093,8101,8111,8117,8123,8147,8161,8167,8171,8179,8191,8209,8219,8221,8231,8233,8237,8243,8263,8269,8273,8287,8291,8293,8297,8311,8317,8329,8353,8363,8369,8377,8387,8389,8419,8423,8429,8431,8443,8447,8461,8467,8501,8513,8521,8527,8537,8539,8543,8563,8573,8581,8597,8599,8609,8623,8627,8629,8641,8647,8663,8669,8677,8681,8689,8693,8699,8707,8713,8719,8731,8737,8741,8747,8753,8761,8779,8783,8803,8807,8819,8821,8831,8837,8839,8849,8861,8863,8867,8887,8893,8923,8929,8933,8941,8951,8963,8969,8971,8999,9001,9007,9011,9013,9029,9041,9043,9049,9059,9067,9091,9103,9109,9127,9133,9137,9151,9157,9161,9173,9181,9187,9199,9203,9209,9221,9227,9239,9241,9257,9277,9281,9283,9293,9311,9319,9323,9337,9341,9343,9349,9371,9377,9391,9397,9403,9413,9419,9421,9431,9433,9437,9439,9461,9463,9467,9473,9479,9491,9497,9511,9521,9533,9539,9547,9551,9587,9601,9613,9619,9623,9629,9631,9643,9649,9661,9677,9679,9689,9697,9719,9721,9733,9739,9743,9749,9767,9769,9781,9787,9791,9803,9811,9817,9829,9833,9839,9851,9857,9859,9871,9883,9887,9901,9907,9923,9929,9931,9941,9949,9967,9973,10007
-          ]
+          ],
+          emotions: [
+              "love",
+              "joy",
+              "surprise",
+              "anger",
+              "sadness",
+              "fear"
+          ],
       };
 
       var o_hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -7351,6 +8084,10 @@
               d2 = 0;
           }
           return ''+n[0]+n[1]+'.'+n[2]+n[3]+n[4]+'.'+n[5]+n[6]+n[7]+'/0001-'+d1+d2;
+      };
+
+      Chance.prototype.emotion = function () {
+          return this.pick(this.get("emotions"));
       };
 
       // -- End Miscellaneous --
@@ -7784,7 +8521,7 @@
 
       // CommonJS module
       {
-          if (module.exports) {
+          if ( module.exports) {
               exports = module.exports = Chance;
           }
           exports.Chance = Chance;
@@ -7857,7 +8594,7 @@
     }
 
     p.draw = function() {
-      p.background(background ? background : "#fefefe");
+      p.background(background ? background : '#fefefe');
       for (let i = 0; i < gy; i++) {
         for (let j = 0; j < gx; j++) {
           p.push();
@@ -7869,7 +8606,7 @@
     };
 
     p.keyPressed = function() {
-      if (p.keyCode === 80) p.saveCanvas("sketch_" + THE_SEED, "jpeg");
+      if (p.keyCode === 80) p.saveCanvas('sketch_' + THE_SEED, 'jpeg');
     };
 
     function nextCell(n, w) {
@@ -7998,4 +8735,4 @@
     return pairs;
   }
 
-}));
+})));
