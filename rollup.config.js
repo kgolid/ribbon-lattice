@@ -11,5 +11,14 @@ export default [
       format: 'umd'
     },
     plugins: [resolve(), commonjs()]
+  },
+  {
+    input: 'index-reflect.js',
+    output: {
+      name: 'isometric-automata',
+      file: pkg.reflect,
+      format: 'umd'
+    },
+    plugins: [resolve(), commonjs()]
   }
 ];

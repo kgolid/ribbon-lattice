@@ -8,6 +8,7 @@
     "watch": "rollup -c -w"
   },
   "browser": "dist/index.js",
+  "reflect": "dist/index-reflect.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
